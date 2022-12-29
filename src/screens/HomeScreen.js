@@ -5,6 +5,7 @@ const DATA = [
     {
       id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
       title: 'First Item',
+      
     },
     {
       id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
@@ -16,7 +17,7 @@ const DATA = [
     },
   ];
 
-  const Item = ({ title }) => (
+  const Item = ({ title,image }) => (
     <View style={styles.item}>
       <Text style={styles.title}>{title}</Text>
     </View>
@@ -38,6 +39,7 @@ const HomeScreen = ({navigation}) => {
     {/* FlatList section Render books  */}
     <View style={{top:21}}>
     <FlatList
+      horizontal
         data={DATA}
         renderItem={renderItem}
         keyExtractor={item => item.id}
@@ -45,8 +47,8 @@ const HomeScreen = ({navigation}) => {
       </View>
 
       <TouchableOpacity onPress={()=>navigation.navigate('Testing')}>
-        <Text>
-            Hello
+        <Text style={{top:32}}>
+            Tesst Button
         </Text>
       </TouchableOpacity>
   </View>
